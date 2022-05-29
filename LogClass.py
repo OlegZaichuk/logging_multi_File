@@ -22,7 +22,6 @@ class LogConfigActivator:
 
         logger = logging.getLogger(config['stream_name'])
         logger.setLevel(logging.INFO)
-        print(f"{self.log_file_path}{config['file_name']}")
 
         if config['file_s'] is True:
             f_handler = logging.FileHandler(f"{self.log_file_path}{config['file_name']}", mode='a')
@@ -39,7 +38,6 @@ class LogConfigActivator:
             logger.addHandler(c_handler)
 
     def __init__(self):
-        print("start")
         for log_conf in list_of_log:
             self.setup_logger(log_conf)
 
